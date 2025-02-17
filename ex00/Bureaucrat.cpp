@@ -23,14 +23,14 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Bureaucrat destructor called" << std::endl;
 }
 
-const std::string &Bureaucrat::getName() const
+const char *Bureaucrat::GradeTooHighException::what() const noexcept
 {
-	return this->name;
+	return ("grade is too high");
 }
 
-int Bureaucrat::getGrade() const
+const char *Bureaucrat::GradeTooLowException::what() const noexcept
 {
-	return this->grade;
+	return ("grade is too low");
 }
 
 void Bureaucrat::incrementGrade()
@@ -45,6 +45,16 @@ void Bureaucrat::decrementGrade()
 	this->grade++;
 }
 
+const std::string &Bureaucrat::getName() const
+{
+	return this->name;
+}
+
+int Bureaucrat::getGrade() const
+{
+	return this->grade;
+}
+
 bool Bureaucrat::validateGrade(const int grade) const
 {
 	if (grade < 1)
@@ -52,16 +62,6 @@ bool Bureaucrat::validateGrade(const int grade) const
 	if (grade > 150)
 		throw GradeTooLowException();
 	return true;
-}
-
-const char *Bureaucrat::GradeTooHighException::what() const noexcept
-{
-	return ("grade is too high");
-}
-
-const char *Bureaucrat::GradeTooLowException::what() const noexcept
-{
-	return ("grade is too low");
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat)

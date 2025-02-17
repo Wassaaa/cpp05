@@ -27,11 +27,11 @@ public:
 	int getGrade() const;
 	void incrementGrade();
 	void decrementGrade();
-	bool validateGrade(const int grade) const;
 
 private:
 	const std::string name;
 	int grade;
+	bool validateGrade(const int grade) const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
