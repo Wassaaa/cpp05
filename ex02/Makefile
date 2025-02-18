@@ -38,7 +38,8 @@ re: fclean all
 ################################################################################
 
 clean:
-	rm -rf ./obj %_shrubbery
+	rm -rf ./obj
+	find . -name '*_shrubbery' -exec rm -f {} +
 
 fclean: clean
 	rm -rf $(NAME)
