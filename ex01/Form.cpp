@@ -14,6 +14,7 @@ Form::Form(const std::string name, const int signGrade, const int executeGrade) 
 {
 	std::cout << "Form parameterized constructor called" << std::endl;
 	validateGrade(this->signGrade);
+	validateGrade(this->executeGrade);
 }
 
 // copy constructor
@@ -22,6 +23,7 @@ Form::Form(const Form &other) : name(other.name), isSigned(other.isSigned),
 {
 	std::cout << "Form copy constructor called" << std::endl;
 	validateGrade(this->signGrade);
+	validateGrade(this->executeGrade);
 }
 
 Form::~Form()
