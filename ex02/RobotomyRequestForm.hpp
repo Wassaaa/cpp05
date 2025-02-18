@@ -4,7 +4,6 @@
 # include <random>
 # include "AForm.hpp"
 
-class Bureaucrat;
 class RobotomyRequestForm : public AForm
 {
 	public:
