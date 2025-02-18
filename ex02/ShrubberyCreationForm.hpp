@@ -8,6 +8,7 @@ class Bureaucrat;
 class ShrubberyCreationForm : public AForm
 {
 	public:
+		// constructors
 		ShrubberyCreationForm();
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm& other);
