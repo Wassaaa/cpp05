@@ -2,3 +2,4 @@ obj/
 Bureaucrat
 .vscode/
 *_shrubbery
+.clang-format
